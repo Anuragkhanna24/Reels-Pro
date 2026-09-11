@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+  @apply text-sm md:text-base;
+}
+
+/* Force dark mode for inputs and other elements */
+input,
+textarea,
+select {
+  color-scheme: dark;
+  @apply bg-gray-800 border-gray-700 text-white placeholder-gray-500;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  @apply ring-2 ring-primary;
+}
+
+/* Scrollbar customization for dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
+/* Responsive utilities */
+@layer components {
+  .container-responsive {
+    @apply container mx-auto px-2 sm:px-4 md:px-6 lg:px-8;
+  }
+
+  .card-responsive {
+    @apply rounded-lg transition-all duration-300 hover:shadow-lg;
+  }
+}
